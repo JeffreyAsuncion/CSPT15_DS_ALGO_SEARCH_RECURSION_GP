@@ -30,6 +30,45 @@ list I came up was absolutely huge, so make sure your solution is efficient.
 *Note: you should be able to come up with a solution that has O(log n) time
 complexity.*
 """
+
+"""
+Brute Force
+"""
+# def find_rotation_point(surnames):
+
+#     for i in range(len(surnames)):
+#         if surnames[i]>surnames[i+1]:
+#             return i
+
+
 def find_rotation_point(surnames):
+
+    """01:30 """
     # Your code here
+    # Linear Search (Brute Force)
+    # set 2 indices n1 and n2
+    # iterate over the surnames list using a range based loop
+        # check if surnames at index of n1 is greater than
+        # surnames at index n2
+            # return n2
+        # increment n1
+        # increment n2
     pass
+
+
+
+surnames = [
+    'liu',
+    'mcdowell',
+    'nixon',
+    'sparks',
+    'zhang',
+    'ahmed',  # <-- rotates here!
+    'brandt',
+    'davenport',
+    'farley',
+    'glover',
+    'kennedy',
+]
+
+print(find_rotation_point(surnames))
