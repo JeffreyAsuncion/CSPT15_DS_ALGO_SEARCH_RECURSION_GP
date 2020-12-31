@@ -1,9 +1,9 @@
 def iter_search(items, target):
     # iterate over all items
     # iterate backwards
-    for item in range(len(items), 0 , -1):
+    for item in range(len(items)-1, 0 , -1):
         # if our target is equal to our item
-        if target == item:
+        if target == items[item]:
             # return True to the caller
             return True
     
@@ -28,4 +28,12 @@ def rec_search(items, target):
     # return a recursive call using a slice of the items
     # from the beginning of list to all but the last one
     # passing on the target
-    return rec_search()
+    print("LOL")
+    return rec_search(items[:-1], target)
+
+
+L = [7, 2, 9, 4, 6]
+t = 9
+
+print(iter_search(L,t))
+print(rec_search(L,t))
