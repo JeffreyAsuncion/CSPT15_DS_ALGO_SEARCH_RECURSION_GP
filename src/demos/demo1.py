@@ -45,19 +45,51 @@ def find_rotation_point(surnames):
             return i + 1 
 
 
-# def find_rotation_point(surnames):
+def find_rotation_point_BN(surnames):
 
-#     """01:30 """
-#     # Your code here
-#     # Linear Search (Brute Force)
-#     # set 2 indices n1 and n2
-#     # iterate over the surnames list using a range based loop
-#         # check if surnames at index of n1 is greater than
-#         # surnames at index n2
-#             # return n2
-#         # increment n1
-#         # increment n2
-#     pass
+    """01:30 """
+    # Your code here
+    # Linear Search (Brute Force) O(n)
+    # set 2 indices n1 and n2
+    # iterate over the surnames list using a range based loop
+
+        # check if surnames at index of n1 is greater than
+        # surnames at index n2
+            # return n2
+
+        # increment n1
+        # increment n2
+
+
+    ##
+    # binary search O(log(n))
+    # grab the first surname
+    first_surname = surnames[0]
+    # set a min to 0
+    min = 0
+    # set our max to the length of surnames - 1
+    max = len(surnames) - 1
+
+    # while my min is less than my max
+    while min < max:
+        # guess the halfway point
+        guess = min + (max - min) // 2
+
+        # if our guess comes after our surname or is less than our surname
+        if surnames[guess] >= first_surname:
+            # go right
+            min = guess
+
+        # otherwise
+        else:
+            # go left
+            max = guess
+
+        # if our min and max overlap / converge
+        if min + 1 == max:
+            # our max is alphabethically first
+            # so return our max
+            return max
 
 
 
@@ -75,4 +107,4 @@ surnames = [
     'kennedy',
 ]
 
-print(find_rotation_point(surnames))
+print(find_rotation_point_BN(surnames))
