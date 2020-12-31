@@ -34,26 +34,30 @@ complexity.*
 """
 Brute Force
 """
+def find_rotation_point(surnames):
+    # Linear Search (Brute Force)
+    # iterate over the surnames list
+    for i in range(len(surnames)):
+        # check if surnames at index of n1 is 
+        # greater than surnames at index n2
+        if surnames[i]>surnames[i+1]:
+            # return the index   i + 1
+            return i + 1 
+
+
 # def find_rotation_point(surnames):
 
-#     for i in range(len(surnames)):
-#         if surnames[i]>surnames[i+1]:
-#             return i
-
-
-def find_rotation_point(surnames):
-
-    """01:30 """
-    # Your code here
-    # Linear Search (Brute Force)
-    # set 2 indices n1 and n2
-    # iterate over the surnames list using a range based loop
-        # check if surnames at index of n1 is greater than
-        # surnames at index n2
-            # return n2
-        # increment n1
-        # increment n2
-    pass
+#     """01:30 """
+#     # Your code here
+#     # Linear Search (Brute Force)
+#     # set 2 indices n1 and n2
+#     # iterate over the surnames list using a range based loop
+#         # check if surnames at index of n1 is greater than
+#         # surnames at index n2
+#             # return n2
+#         # increment n1
+#         # increment n2
+#     pass
 
 
 
